@@ -1,13 +1,27 @@
 <template>
-  <div>版块页面</div>
+  <div>
+    <div>版块页面</div>
+    <div>跳转到</div>
+    <div>
+      <router-link to="/bankuai/radio">radio</router-link>
+      <router-link to="/bankuai/radio2">radio2</router-link>
+    </div>
+    <button v-on:click="to">跳转到主题</button>
+    <router-view />
+  </div>
 </template>
 
 <script>
 export default {
-  name: "Bankuai"
+  name: "Bankuai",
   // data() {
 
   //   }
+  methods:{
+    to:function(){
+      this.$router.push({path:'/shouye',query:{userid:"66666666"}});
+    }
+  }
 };
 </script>
 
